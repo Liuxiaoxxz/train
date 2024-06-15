@@ -1,4 +1,4 @@
-package com.jiawa.train.member.config;
+package com.jiawa.train.common.member.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
