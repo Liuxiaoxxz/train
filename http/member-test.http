@@ -10,14 +10,23 @@ Content-Type: application/json
  "code": "8888"
 }
 
+> {%
+client.log(JSON.stringify(response.body));
+client.log(JSON.stringify(response.body.content.token));
+client.global.set("token",response.body.content.token);
+%}
+
 
 ###
-POST http://localhost:8001/member/passenger/save
+POST http://localhost:8000/member/passenger/save
 Content-Type: application/json
+token: {{token}}
+#token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTk2MDc5NzEsIm1vYmlsZSI6IjE3ODU3MDA3MDk1IiwiaWQiOjE4MDY3OTE3NDk2MzM0NDU4ODgsImV4cCI6MTcxOTY5NDM3MSwiaWF0IjoxNzE5NjA3OTcxfQ.h6ndFY1g-QWB65qLhxxfCjc_Qioj5SRYuf39HzIrCec
 
 {
- "memberId": "13000000001",
+ "memberId": "13000000",
   "name": "test",
   "idCard": "123321",
   "type": "1"
 }
+
