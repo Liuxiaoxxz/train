@@ -9,3 +9,15 @@ Content-Type: application/json
  "mobile": "17857007095",
  "code": "8888"
 }
+
+
+###
+POST http://localhost:8001/member/passenger/save
+Content-Type: application/json
+
+{
+ "memberId": "13000000001",
+  "name": "test",
+  "idCard": "123321",
+  "type": "1"
+}
