@@ -1,6 +1,7 @@
 package com.jiawa.train.member.controller;
 
 import com.jiawa.train.common.resp.CommonResp;
+import com.jiawa.train.member.enums.PassengerTypeEnum;
 import com.jiawa.train.member.req.MemberLoginReq;
 import com.jiawa.train.member.req.MemberRegisterReq;
 import com.jiawa.train.member.req.MemberSendCodeReq;
@@ -18,6 +19,7 @@ public class MemberController {
 
 	@GetMapping("/count")
 	public CommonResp<Integer> count(){
+		PassengerTypeEnum.ADULT.getCode();
 		int count = memberService.count();
 		CommonResp<Integer> commonResp = new CommonResp<>();
 		commonResp.setContent(count);
